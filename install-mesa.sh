@@ -12,9 +12,9 @@ curl https://zenodo.org/record/4311514/files/mesa-r15140.zip?download=1 --output
 unzip ~/software/mesa-r15140.zip -d ~/software/
 rm -rf ~/software/mesa-r15140.zip
 
-export MESA_DIR=~/software/mesa-r15140
 echo "export MESA_DIR=~/software/mesa-r15140" >> ~/.bash_profile
 echo "export OMP_NUM_THREADS=2" >> ~/.bash_profile
+export MESA_DIR=~/software/mesa-r15140
 
 cd $MESA_DIR
 ./install
