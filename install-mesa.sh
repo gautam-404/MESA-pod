@@ -1,8 +1,8 @@
 mkdir ~/software
 
 curl http://user.astro.wisc.edu/~townsend/resource/download/mesasdk/mesasdk-x86_64-linux-21.4.1.tar.gz --output ~/software/mesasdk-x86_64-linux-22.6.1.tar.gz
-tar xvfz ~/software/mesasdk-x86_64-linux-22.6.1.tar.gz -C ~/software/
-rm -rf ~/software/mesasdk-x86_64-linux-22.6.1.tar.gz
+tar xvfz ~/software/mesasdk-x86_64-linux-21.4.1.tar.gz -C ~/software/
+rm -rf ~/software/mesasdk-x86_64-linux-21.4.1.tar.gz
 
 echo "export MESASDK_ROOT=~/software/mesasdk" >> ~/.bash_profile
 echo "source ~/software/mesasdk/bin/mesasdk_init.sh" >> ~/.bash_profile
