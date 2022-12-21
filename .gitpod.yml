@@ -1,3 +1,3 @@
 tasks:
   - before: sh setup-before.sh
-    init: sh setup-init.sh
+    init: sh install_mesa.sh
