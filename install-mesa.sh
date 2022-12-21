@@ -15,7 +15,7 @@ echo "export MESA_DIR=~/software/mesa-r15140" >> ~/.bash_profile
 echo "export OMP_NUM_THREADS=2" >> ~/.bash_profile
 
 export MESASDK_ROOT=~/software/mesasdk
-source ~/software/mesasdk/bin/mesasdk_init.sh
+source ~./software/mesasdk/bin/mesasdk_init.sh
 export MESA_DIR=~/software/mesa-r15140
 export OMP_NUM_THREADS=2
 
