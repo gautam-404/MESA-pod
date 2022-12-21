@@ -19,5 +19,3 @@ echo "source ~/.bash_profile" >> ~/.bashrc
 
 cd ~/software/mesa-r15140
 ./install
-
-exit
