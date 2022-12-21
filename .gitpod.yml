@@ -1,0 +1,3 @@
+tasks:
+  - before: sh setup-before.sh
+    init:
