@@ -1,26 +1,24 @@
-#!/bin/bash
-
 ## Install MESA
-mkdir /workspace/software
+DIR="/workspace/software"
+mkdir $DIR
+# sdk
+curl http://user.astro.wisc.edu/~townsend/resource/download/mesasdk/mesasdk-x86_64-linux-21.4.1.tar.gz --output $DIR/mesasdk-x86_64-linux-21.4.1.tar.gz
+tar xvfz $DIR/mesasdk-x86_64-linux-21.4.1.tar.gz -C $DIR/
+rm -rf $DIR/mesasdk-x86_64-linux-21.4.1.tar.gz
+#mesa
+curl https://zenodo.org/record/4311514/files/mesa-r15140.zip?download=1 --output $DIR/mesa-r15140.zip
+unzip $DIR/mesa-r15140.zip -d $DIR/
+rm -rf $DIR/mesa-r15140.zip
 
-curl http://user.astro.wisc.edu/~townsend/resource/download/mesasdk/mesasdk-x86_64-linux-21.4.1.tar.gz --output /workspace/software/mesasdk-x86_64-linux-21.4.1.tar.gz
-tar xvfz /workspace/software/mesasdk-x86_64-linux-21.4.1.tar.gz -C /workspace/software/
-rm -rf /workspace/software/mesasdk-x86_64-linux-21.4.1.tar.gz
+echo "export MESASDK_ROOT=$DIR/mesasdk" >> ~/.zshrc
+echo "source $DIR/mesasdk/bin/mesasdk_init.sh" >> ~/.zshrc
+echo "export MESA_DIR=$DIR/mesa-r15140" >> ~/.zshrc
+echo "export OMP_NUM_THREADS=2" >> ~/.zshrc
 
-echo "export MESASDK_ROOT=/workspace/software/mesasdk" >> ~/.bash_profile
-echo "source /workspace/software/mesasdk/bin/mesasdk_init.sh" >> ~/.bash_profile
+source ~/.zshrc
 
-curl https://zenodo.org/record/4311514/files/mesa-r15140.zip?download=1 --output /workspace/software/mesa-r15140.zip
-unzip /workspace/software/mesa-r15140.zip -d /workspace/software/
-rm -rf /workspace/software/mesa-r15140.zip
 
-echo "export MESA_DIR=/workspace/software/mesa-r15140" >> ~/.bash_profile
-echo "export OMP_NUM_THREADS=2" >> ~/.bash_profile
-
-source ~/.bash_profile
-echo "source ~/.bash_profile" >> ~/.bashrc
-
-cd /workspace/software/mesa-r15140
+cd $DIR/mesa-r15140
 ./install
 
 ## Install GYRE
