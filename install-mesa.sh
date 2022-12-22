@@ -17,5 +17,5 @@ echo "export OMP_NUM_THREADS=2" >> ~/.bash_profile
 source ~/.bash_profile
 echo "source ~/.bash_profile" >> ~/.bashrc
 
-cd ~/software/mesa-r15140
+cd $MESA_DIR
 ./install
