@@ -1,7 +1,12 @@
+#!/bin/bash
+
+## Install prerequisites
 sudo apt update
-sudo apt -y upgrade
+sudo apt install zsh
+chsh -s $(which zsh)
 yes | sudo apt install build-essential wget curl binutils make perl libx11-6 libx11-dev zlib1g zlib1g-dev tcsh
 
+## Install MESA
 mkdir /workspaces/software
 
 curl http://user.astro.wisc.edu/~townsend/resource/download/mesasdk/mesasdk-x86_64-linux-21.4.1.tar.gz --output /workspaces/software/mesasdk-x86_64-linux-21.4.1.tar.gz
@@ -23,3 +28,8 @@ echo "source ~/.bash_profile" >> ~/.bashrc
 
 cd /workspaces/software/mesa-r15140
 ./install
+
+## Install GYRE
+export GYRE_DIR=$MESA_DIR/gyre/gyre
+cd $GYRE_DIR
+make

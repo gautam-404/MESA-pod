@@ -1,3 +1,6 @@
+#!/bin/bash
+
+## Install MESA
 mkdir /workspace/software
 
 curl http://user.astro.wisc.edu/~townsend/resource/download/mesasdk/mesasdk-x86_64-linux-21.4.1.tar.gz --output /workspace/software/mesasdk-x86_64-linux-21.4.1.tar.gz
@@ -19,3 +22,8 @@ echo "source ~/.bash_profile" >> ~/.bashrc
 
 cd /workspace/software/mesa-r15140
 ./install
+
+## Install GYRE
+export GYRE_DIR=$MESA_DIR/gyre/gyre
+cd $GYRE_DIR
+make
