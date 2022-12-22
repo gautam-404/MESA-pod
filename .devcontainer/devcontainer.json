@@ -12,7 +12,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "bash codespace-install-mesa.sh",
+	"postCreateCommand": "zsh codespace-install-mesa.sh",
 
 	// Configure tool-specific properties.
 	// "customizations": {},

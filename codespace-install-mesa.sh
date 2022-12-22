@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/zsh
 
 ## Install prerequisites
 sudo apt update
@@ -25,6 +25,7 @@ echo "export MESASDK_ROOT=$DIR/mesasdk" >> ~/.zshrc
 echo "source $DIR/mesasdk/bin/mesasdk_init.sh" >> ~/.zshrc
 echo "export MESA_DIR=$DIR/mesa-r15140" >> ~/.zshrc
 echo "export OMP_NUM_THREADS=2" >> ~/.zshrc
+exec zsh
 source ~/.zshrc
 
 cd $DIR/mesa-r15140
