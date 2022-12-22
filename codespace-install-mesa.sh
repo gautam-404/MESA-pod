@@ -1,3 +1,7 @@
+sudo apt update
+sudo apt -y upgrade
+sudo apt install -y build-essential wget curl binutils make perl libx11-6 libx11-dev zlib1g zlib1g-dev tcsh
+
 mkdir /workspaces/software
 
 curl http://user.astro.wisc.edu/~townsend/resource/download/mesasdk/mesasdk-x86_64-linux-21.4.1.tar.gz --output /workspaces/software/mesasdk-x86_64-linux-21.4.1.tar.gz
