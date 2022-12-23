@@ -2,8 +2,6 @@ tasks:
   - before: |
       (
         sudo apt update
-        sudo apt install zsh
-        chsh -s $(which zsh)
         yes | sudo apt install zsh build-essential wget curl binutils make perl libx11-6 libx11-dev zlib1g zlib1g-dev tcsh
       )
-    init: bash gitpod-install-mesa.sh
+    init: zsh gitpod-install-mesa.sh
