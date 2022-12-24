@@ -5,7 +5,7 @@ sudo apt update
 yes | sudo apt install build-essential wget curl binutils make perl libx11-6 libx11-dev zlib1g zlib1g-dev tcsh
 
 ## Install MESA
-DIR="/workspaces/software"
+DIR = "/workspaces/software"
 echo "export MESASDK_ROOT=$DIR/mesasdk" >> ~/.zshrc
 echo "source $DIR/mesasdk/bin/mesasdk_init.sh" >> ~/.zshrc
 echo "export MESA_DIR=$DIR/mesa-r15140" >> ~/.zshrc
