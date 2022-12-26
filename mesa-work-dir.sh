@@ -19,7 +19,7 @@ create_dir()
         inp=$(pwd)
     fi
 
-    cp -R $MESA_DIR/star/work ./$inp
+    cp -R $MESA_DIR/star/work $inp
     cp -R $MESA_DIR/star/defaults/*.list $inp
     cd $inp
     ./mk
