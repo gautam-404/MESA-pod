@@ -35,7 +35,8 @@ else
         then
             cd work
             ./clean
-            echo "Cleaned....Done!"
+            ./mk
+            echo "Cleaned and ran 'make'....Done!"
         else
             echo "Skipping...Done!"
         fi
