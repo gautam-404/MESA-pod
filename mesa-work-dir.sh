@@ -12,6 +12,14 @@ create_dir()
     else 
         inp=$(pwd)
     fi
+
+    ## Existig directory is removed while creating a
+    ## new directory with the same name
+    if [ -d "$inp" ]
+    then 
+        rm -rf $inp
+    fi
+
     cp -R $MESA_DIR/star/work ./$inp
     cp -R $MESA_DIR/star/defaults/*.list $inp
     cd $inp
