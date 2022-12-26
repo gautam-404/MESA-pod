@@ -9,15 +9,14 @@ create_dir()
     then
         echo "Enter a custom name for your MESA work directory..." 
         read inp
+        ## Existig directory is removed while creating a
+        ## new directory with the same name
+        if [ -d "$inp" ]
+        then 
+            rm -rf $inp
+        fi
     else 
         inp=$(pwd)
-    fi
-
-    ## Existig directory is removed while creating a
-    ## new directory with the same name
-    if [ -d "$inp" ]
-    then 
-        rm -rf $inp
     fi
 
     cp -R $MESA_DIR/star/work ./$inp
