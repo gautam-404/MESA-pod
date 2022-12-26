@@ -1,7 +1,7 @@
 #! /usr/bin/zsh
 
 ## Make new MESA work directory
-DIR = "./work"
+DIR="./work"
 
 create_dir()
 {
@@ -10,7 +10,7 @@ create_dir()
         echo "Enter a custom name for your MESA work directory..." 
         read inp
     else 
-        inp = $(pwd)
+        inp=$(pwd)
     fi
     cp -R $MESA_DIR/star/work ./$inp
     cp -R $MESA_DIR/star/defaults/*.list $inp

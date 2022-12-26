@@ -1,5 +1,5 @@
 ## Install MESA
-DIR = "/workspace/software"
+DIR="/workspace/software"
 mkdir $DIR
 # sdk
 curl http://user.astro.wisc.edu/~townsend/resource/download/mesasdk/mesasdk-x86_64-linux-21.4.1.tar.gz --output $DIR/mesasdk-x86_64-linux-21.4.1.tar.gz
