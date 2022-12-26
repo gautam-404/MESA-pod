@@ -16,7 +16,7 @@ create_dir()
             rm -rf $inp
         fi
     else 
-        inp=$(pwd)
+        inp="work"
     fi
 
     cp -R $MESA_DIR/star/work $inp
