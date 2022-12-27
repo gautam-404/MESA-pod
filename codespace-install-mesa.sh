@@ -2,7 +2,7 @@
 
 ## Install prerequisites
 sudo apt update
-yes | sudo apt install build-essential wget curl binutils make perl libx11-6 libx11-dev zlib1g zlib1g-dev tcsh
+yes | sudo apt install build-essential wget curl binutils make perl libx11-6 libx11-dev zlib1g zlib1g-dev tcsh gh
 
 ## Install MESA
 DIR="/workspaces/software"
