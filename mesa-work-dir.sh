@@ -1,4 +1,4 @@
-#! /usr/bin/zsh
+#! /bin/zsh
 
 ## Make new MESA work directory
 DIR="./work"
