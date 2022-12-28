@@ -5,18 +5,14 @@ DIR="./work"
 
 create_dir()
 {
-    if $1
-    then
-        echo "Enter a custom name for your MESA work directory..." 
-        read inp
-        ## Existig directory is removed while creating a
-        ## new directory with the same name
-        if [ -d "$inp" ]
-        then 
-            rm -rf $inp
-        fi
-    else 
-        inp="work"
+    ## Pers-note: use $1 for first argument input
+    echo "Enter a custom name for your MESA work directory..." 
+    read inp
+    ## Existig directory is removed while creating a
+    ## new directory with the same name
+    if [ -d "$inp" ]
+    then 
+        rm -rf $inp
     fi
 
     cp -R $MESA_DIR/star/work $inp
