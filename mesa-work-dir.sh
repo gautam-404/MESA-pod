@@ -39,7 +39,8 @@ else
         read response
         if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
         then
-            echo "Cleaning and remaking (./clean & ./mk)..."
+            ## ./clean + ./mk
+            echo "Cleaning and remaking..."
             cd $DIR
             ./clean
             # run make in silence
