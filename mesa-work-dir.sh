@@ -1,13 +1,13 @@
 #! /bin/zsh
 
 ## Make new MESA work directory
-DIR="./work"
+echo "Enter a name for your MESA work directory..." 
+read DIR
 
 create_dir()
 {
-    ## Pers-note: use $1 for first argument input
-    echo "Enter a custom name for your MESA work directory..." 
-    read inp
+    echo "Creating..."
+    inp=$1
     ## Existig directory is removed while creating a
     ## new directory with the same name
     if [ -d "$inp" ]
@@ -18,28 +18,33 @@ create_dir()
     cp -R $MESA_DIR/star/work $inp
     cp -R $MESA_DIR/star/defaults/*.list $inp
     cd $inp
-    ./mk
+    # run make in silence
+    ./mk >/dev/null 2>&1
+    echo "Done!"
 }
+
 
 if [ ! -d "$DIR" ]
 then
-    create_dir false
+    create_dir $DIR
 else
-    echo "A work directory for MESA already exists!"
-    echo "Do you wish to create a new directory? [y/n]"
+    echo "A work directory for MESA with the same name already exists!"
+    echo "Do you wish to overwrite this directory? [y/n]"
     read response
     if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
     then
-        create_dir true
+        create_dir $DIR
     else
         echo "Clean the existing work directory for re-use? [y/n]"
         read response
         if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
         then
-            cd work
+            echo "Cleaning..."
+            cd $DIR
             ./clean
-            ./mk
-            echo "Cleaned and ran 'make'....Done!"
+            # run make in silence
+            ./mk >/dev/null 2>&1
+            echo "Cleaned and ran 'make (./mk)'....Done!"
         else
             echo "Skipping...Done!"
         fi
