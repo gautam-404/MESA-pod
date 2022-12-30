@@ -1,4 +1,4 @@
-# Delta Scuti star 38 Eri 
+# $\delta$ Scuti star 38 Eri 
 
 ![HR Diagram](./png/hr_001115.png)
 
