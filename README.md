@@ -1,3 +1,2 @@
 # Modules for Experiments in Stellar Astrophysics (MESA)
-* MESA environment
-* Easy Github Codespace/Gitpod setup
+* MESA environment setup for Github Codespaces/Gitpod 
