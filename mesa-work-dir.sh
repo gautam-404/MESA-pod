@@ -16,7 +16,7 @@ create_dir()
     fi
 
     cp -R $MESA_DIR/star/work $inp
-    cp -R $MESA_DIR/star/defaults/*.list $inp
+    # cp -R $MESA_DIR/star/defaults/*.list $inp
     cd $inp
     # run make in silence
     ./mk >/dev/null 2>&1
