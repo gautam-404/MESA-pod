@@ -27,3 +27,6 @@ cd $GYRE_DIR
 make
 
 yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+wget https://gist.githubusercontent.com/renbaoshuo/93f75878fe29cf9ad48a675abd69ef97/raw/3b4ddd4f190af6c6466e07da0850618a9c208353/codespaces.zsh-theme -O ~/.oh-my-zsh/custom/themes/codespaces.zsh-theme
+# echo "ZSH_THEME=\"codespaces\"" >> ~/.zshrc
+# source ~/.zshrc
