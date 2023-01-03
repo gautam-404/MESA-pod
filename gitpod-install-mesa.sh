@@ -25,3 +25,5 @@ cd $DIR/mesa-r15140
 export GYRE_DIR=$MESA_DIR/gyre/gyre
 cd $GYRE_DIR
 make
+
+yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
