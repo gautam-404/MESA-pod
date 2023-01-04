@@ -15,13 +15,7 @@ install_mesa()
     unzip $DIR/mesa-r15140.zip -d $DIR/
     rm -rf $DIR/mesa-r15140.zip
 
-    echo "export MESASDK_ROOT=$DIR/mesasdk" >> ~/.zshrc
-    echo "source $DIR/mesasdk/bin/mesasdk_init.sh" >> ~/.zshrc
-    echo "export MESA_DIR=$DIR/mesa-r15140" >> ~/.zshrc
-    echo "export OMP_NUM_THREADS=2" >> ~/.zshrc
-
-    source ~/.zshrc
-
+    set_env_var
 
     cd $DIR/mesa-r15140
     ./install
@@ -34,6 +28,15 @@ install_mesa()
     echo "Done!"
 }
 
+set_env_var()
+{
+    echo "export MESASDK_ROOT=$DIR/mesasdk" >> ~/.zshenv
+    echo "source $DIR/mesasdk/bin/mesasdk_init.sh" >> ~/.zshenv
+    echo "export MESA_DIR=$DIR/mesa-r15140" >> ~/.zshenv
+    echo "export OMP_NUM_THREADS=2" >> ~/.zshenv
+    source ~/.zshenv
+}
+
 if [ -d "$DIR/mesasdk" ] && [ -d "$DIR/mesa-r15140" ];
 then
     echo "MESA already exists!!"
@@ -41,11 +44,7 @@ then
     read response
     if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
     then
-        echo "export MESASDK_ROOT=$DIR/mesasdk" >> ~/.zshrc
-        echo "source $DIR/mesasdk/bin/mesasdk_init.sh" >> ~/.zshrc
-        echo "export MESA_DIR=$DIR/mesa-r15140" >> ~/.zshrc
-        echo "export OMP_NUM_THREADS=2" >> ~/.zshrc
-        source ~/.zshrc
+        set_env_var
         echo "Done!"
         echo "Please run: source ~/.zshrc"
     else  
