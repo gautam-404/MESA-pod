@@ -1,6 +1,6 @@
 from MesaHandler.MesaProjHandler import ProjectOps
 from MesaHandler import MesaAccess
-from alive_progress import alive_bar
+# from alive_progress import alive_bar
 
 dsct = ProjectOps("dsct")       
 dsct.create(overwrite=True, clean=True)             
