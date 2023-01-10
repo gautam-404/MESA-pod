@@ -25,7 +25,10 @@ install_mesa()
     cd $GYRE_DIR
     make
 
-    pip3 install PyMesaHandler
+    cd $DIR
+    git clone https://github.com/gautam-404/PyMesaHandler.git
+    cd PyMesaHandler
+    pip install .
     
     echo "Done!"
 }
