@@ -37,3 +37,5 @@ fi
 export GYRE_DIR=$MESA_DIR/gyre/gyre
 cd $GYRE_DIR
 make
+
+pip install PyMesaHandler
