@@ -51,7 +51,7 @@ then
     then
         set_env_var
         echo "Done!"
-        echo "Please run: source ~/.zshrc"
+        echo "Please run: source ~/.bash_profile"
     else  
         echo "Remove and perform a clean re-install?"
         read response
