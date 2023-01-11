@@ -1,4 +1,4 @@
-#! /bin/zsh
+#! /bin/bash
 
 ## Install MESA
 DIR="/workspace/software"
