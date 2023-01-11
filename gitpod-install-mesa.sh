@@ -35,11 +35,11 @@ install_mesa()
 
 set_env_var()
 {
-    echo "export MESASDK_ROOT=$DIR/mesasdk" >> ~/.zshenv
-    echo "source $DIR/mesasdk/bin/mesasdk_init.sh" >> ~/.zshenv
-    echo "export MESA_DIR=$DIR/mesa-r15140" >> ~/.zshenv
-    echo "export OMP_NUM_THREADS=2" >> ~/.zshenv
-    source ~/.zshenv
+    echo "export MESASDK_ROOT=$DIR/mesasdk" >> ~/.bash_profile
+    echo "source $DIR/mesasdk/bin/mesasdk_init.sh" >> ~/.bash_profile
+    echo "export MESA_DIR=$DIR/mesa-r15140" >> ~/.bash_profile
+    echo "export OMP_NUM_THREADS=2" >> ~/.bash_profile
+    source ~/.bash_profile
 }
 
 if [ -d "$DIR/mesasdk" ] && [ -d "$DIR/mesa-r15140" ];
