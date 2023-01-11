@@ -39,6 +39,6 @@ cd $GYRE_DIR
 make
 
 cd $DIR
-git clone https://github.com/gautam-404/PyMesaHandler.git
+git clone --recurse-submodules  https://github.com/gautam-404/PyMesaHandler.git
 cd PyMesaHandler
 pip install .
