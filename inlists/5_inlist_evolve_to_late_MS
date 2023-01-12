@@ -14,9 +14,12 @@
         save_photo_when_terminate = .true.
         show_log_description_at_start = .false.
 
+		save_model_when_terminate = .true.
+		save_model_filename = 'evolution.mod'
+
 	!# starting model
         load_saved_model = .true.
-        saved_model_name = 'early_evolution.mod' !change this
+        saved_model_name = 'evolution.mod' !change this
 					
 	    !create_pre_main_sequence_model = .true.
 		!pre_ms_T_c = 3d5 ! initial centre temperature
