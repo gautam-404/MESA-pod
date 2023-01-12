@@ -35,11 +35,11 @@ install_mesa()
 
 set_env_var()
 {
-    echo "export MESASDK_ROOT=$DIR/mesasdk" >> ~/.bashrc
-    echo "source $DIR/mesasdk/bin/mesasdk_init.sh" >> ~/.bashrc
-    echo "export MESA_DIR=$DIR/mesa-r15140" >> ~/.bashrc
-    echo "export OMP_NUM_THREADS=2" >> ~/.bashrc
-    source ~/.bashrc
+    echo "export MESASDK_ROOT=$DIR/mesasdk" >> ~/.zshrc
+    echo "source $DIR/mesasdk/bin/mesasdk_init.sh" >> ~/.zshrc
+    echo "export MESA_DIR=$DIR/mesa-r15140" >> ~/.zshrc
+    echo "export OMP_NUM_THREADS=2" >> ~/.zshrc
+    source ~/.zshrc
 }
 
 if [ -d "$DIR/mesasdk" ] && [ -d "$DIR/mesa-r15140" ];
@@ -51,7 +51,7 @@ then
     then
         set_env_var
         echo "Done!"
-        echo "Please run: source ~/.bashrc"
+        echo "Please run: source ~/.zshrc"
     else  
         echo "Remove and perform a clean re-install?"
         read response

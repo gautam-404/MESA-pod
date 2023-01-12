@@ -9,8 +9,8 @@ dsct = ProjectOps("dsct")
 dsct.create(overwrite=True, clean=True)             
 dsct.make()
 
-with alive_bar(unknown="waves") as bar:
-    for i in range(6):
+with alive_bar(unknown="waves2", spinner="dots") as bar:
+    for i in range(5):
         dsct.loadProjInlist(inlists[i])
         dsct.run(silent=True)
         file = open("/workspace/MESA/dsct/runlog", "a")  # append mode
