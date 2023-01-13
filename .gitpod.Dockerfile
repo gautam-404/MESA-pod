@@ -9,7 +9,7 @@ RUN zsh << EOF
     yes | apt-get install build-essential software-properties-common curl binutils make perl libx11-6 libx11-dev zlib1g zlib1g-dev tcsh procps 
     pyenv install 3.11.1
     pyenv global 3.11.1
-    EOF
+EOF
 RUN zsh << EOF
     #! /usr/bin/zsh
     DIR="/home/gitpod/software"
@@ -45,7 +45,7 @@ RUN zsh << EOF
     pip install .
 
     echo "Done!"
-    EOF
+EOF
 
 USER gitpod
 ENV SHELL=/usr/bin/zsh
@@ -55,6 +55,6 @@ RUN zsh << EOF
     wget https://gist.githubusercontent.com/renbaoshuo/93f75878fe29cf9ad48a675abd69ef97/raw/3b4ddd4f190af6c6466e07da0850618a9c208353/codespaces.zsh-theme \
     -O ~/.oh-my-zsh/custom/themes/codespaces.zsh-theme
     zsh -lic "omz theme set codespaces"
-    EOF
+EOF
     
 USER root
