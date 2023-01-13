@@ -4,7 +4,7 @@ SHELL ["/usr/bin/zsh", "-c"]
 USER root
 RUN <<EOF
     apt-get update 
-    yes | apt-get install build-essential software-properties-common curl \
+    apt-get install -yq build-essential software-properties-common curl \
         binutils make perl libx11-6 libx11-dev zlib1g zlib1g-dev tcsh procps 
 EOF
 
