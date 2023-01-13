@@ -5,21 +5,14 @@ USER root
 RUN <<EOF
     apt-get update 
     apt-get install -yq build-essential software-properties-common curl \
-        binutils make perl libx11-6 libx11-dev zlib1g zlib1g-dev tcsh procps 
+        binutils make perl libx11-6 libx11-dev zlib1g zlib1g-dev tcsh procps \
+        libssl-dev zlib1g-dev \
+        libbz2-dev libreadline-dev libsqlite3-dev llvm \
+        libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 EOF
 
 USER gitpod
 ENV SHELL=/usr/bin/zsh
-### C/C++ ###
-RUN <<EOF
-    curl -fsSL https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add - 
-    sudo apt-add-repository -yu "deb http://apt.llvm.org/cosmic/ llvm-toolchain-cosmic-6.0 main" 
-    sudo apt-get install -yq \
-        clang-format-6.0 \
-        clang-tools-6.0 \
-        cmake 
-    sudo ln -s /usr/bin/clangd-6.0 /usr/bin/clangd
-EOF
 ### Python ###
 ENV PATH=$HOME/.pyenv/bin:$HOME/.pyenv/shims:$PATH
 RUN <<EOF
@@ -28,7 +21,11 @@ RUN <<EOF
     echo 'eval "$(pyenv virtualenv-init -)"' >> .zshrc 
     pyenv install 3.11.1
     pyenv global 3.11.1
-    pip install virtualenv pipenv
+    python3 -m pip install --no-cache-dir --upgrade pip
+	pip install --no-cache-dir --upgrade \
+	setuptools wheel virtualenv pipenv pylint rope flake8 \
+	mypy autopep8 pep8 pylama pydocstyle bandit notebook \
+	twine jupyterlab numpy matplotlib
 EOF
 RUN <<EOF
     yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
