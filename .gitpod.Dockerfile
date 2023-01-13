@@ -8,8 +8,6 @@ RUN <<EOF
     yes | apt-get install build-essential software-properties-common curl \
         binutils make perl libx11-6 libx11-dev zlib1g zlib1g-dev tcsh procps \
         xorg openbox
-    apt-get clean
-    rm -rf /var/lib/apt/lists/* /tmp/*
 EOF
 
 USER gitpod
@@ -23,8 +21,6 @@ RUN <<EOF
         clang-tools-6.0 \
         cmake 
     ln -s /usr/bin/clangd-6.0 /usr/bin/clangd 
-    apt-get clean 
-    rm -rf /var/lib/apt/lists/* /tmp/*
 EOF
 ### Python ###
 ENV PATH=$HOME/.pyenv/bin:$HOME/.pyenv/shims:$PATH
@@ -35,7 +31,6 @@ RUN <<EOF
     pyenv install 3.11.1
     pyenv global 3.11.1
     pip install virtualenv pipenv pylance
-    rm -rf /tmp/*
 EOF
 RUN <<EOF
     DIR="/home/gitpod/software"
