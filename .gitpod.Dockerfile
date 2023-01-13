@@ -3,6 +3,7 @@ SHELL ["/usr/bin/zsh", "-c"]
 
 USER root
 RUN <<EOF
+    echo nameserver 8.8.8.8 | sudo tee /etc/resolv.conf
     apt-get update 
     apt-get install -yq build-essential software-properties-common curl \
         binutils make perl libx11-6 libx11-dev zlib1g zlib1g-dev tcsh procps 
