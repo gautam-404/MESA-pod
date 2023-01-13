@@ -6,9 +6,7 @@ RUN <<EOF
     apt-get update 
     apt-get install -yq build-essential software-properties-common curl \
         binutils make perl libx11-6 libx11-dev zlib1g zlib1g-dev tcsh procps 
-EOF
-### C/C++ ###
-RUN <<EOF
+    ### C/C++ ###
     curl -fsSL https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add - 
     apt-add-repository -yu "deb http://apt.llvm.org/cosmic/ llvm-toolchain-cosmic-6.0 main" 
      apt-get install -yq \
