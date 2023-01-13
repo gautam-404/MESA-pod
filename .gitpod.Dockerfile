@@ -22,7 +22,11 @@ RUN <<EOF
     unzip $DIR/mesa-r15140.zip -d $DIR/
     rm -rf $DIR/mesa-r15140.zip
 
-    set_env_var
+    echo "export MESASDK_ROOT=$DIR/mesasdk" >> ~/.zshrc
+    echo "source $DIR/mesasdk/bin/mesasdk_init.sh" >> ~/.zshrc
+    echo "export MESA_DIR=$DIR/mesa-r15140" >> ~/.zshrc
+    echo "export OMP_NUM_THREADS=2" >> ~/.zshrc
+    source ~/.zshrc
 
     cd $DIR/mesa-r15140
     ./install
