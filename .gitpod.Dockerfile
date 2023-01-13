@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:labs
 FROM gitpod/workspace-full
 SHELL ["/usr/bin/zsh", "-c"]
 
