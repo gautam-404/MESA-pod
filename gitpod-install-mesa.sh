@@ -1,7 +1,7 @@
 #! /bin/zsh
 
 ## Install MESA
-DIR="/home/gitpod/software"
+DIR="/workspace/software"
 
 install_mesa()
 {
