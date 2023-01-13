@@ -1,2 +1,3 @@
-# Modules for Experiments in Stellar Astrophysics (MESA)
-* MESA environment setup for Github Codespaces/Gitpod 
+# MESA-pod
+### Create a ready to go Gitpod workspace with this directory!
+-> In the browser’s address bar, prefix the entire URL with gitpod.io/# and press Enter. To get started ith github, refer the [docs](https://www.gitpod.io/docs/introduction/getting-started).
