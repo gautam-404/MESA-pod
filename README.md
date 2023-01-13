@@ -7,7 +7,7 @@
 
 -> To get started with gitpod, refer the [docs](https://www.gitpod.io/docs/introduction/getting-started).
 
-What to do once you have your workspace up and running?
+### What to do once you have your workspace up and running?
 * Create a directory for your work. Or clone an existing repository.
 * Switch to your Folder within VScode. 
     - File -> Open -> *chose your folder in the prompt*
