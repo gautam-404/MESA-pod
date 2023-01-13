@@ -3,13 +3,13 @@ SHELL ["/usr/bin/zsh", "-c"]
 
 USER root
 ENV SHELL=/usr/bin/zsh
-RUN << EOF
+RUN <<EOF
     apt-get update 
     yes | apt-get install build-essential software-properties-common curl binutils make perl libx11-6 libx11-dev zlib1g zlib1g-dev tcsh procps 
     pyenv install 3.11.1
     pyenv global 3.11.1
 EOF
-RUN << EOF
+RUN <<EOF
     DIR="/home/gitpod/software"
     mkdir ~/software \
     mkdir $DIR
@@ -47,7 +47,7 @@ EOF
 
 USER gitpod
 ENV SHELL=/usr/bin/zsh
-RUN << EOF
+RUN <<EOF
     yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     wget https://gist.githubusercontent.com/renbaoshuo/93f75878fe29cf9ad48a675abd69ef97/raw/3b4ddd4f190af6c6466e07da0850618a9c208353/codespaces.zsh-theme \
     -O ~/.oh-my-zsh/custom/themes/codespaces.zsh-theme
