@@ -9,7 +9,7 @@ RUN <<EOF
 EOF
 ### C/C++ ###
 RUN <<EOF
-    curl -fsSL https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - 
+    curl -fsSL https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add - 
     apt-add-repository -yu "deb http://apt.llvm.org/cosmic/ llvm-toolchain-cosmic-6.0 main" 
      apt-get install -yq \
         clang-format-6.0 \
