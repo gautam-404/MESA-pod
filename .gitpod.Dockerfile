@@ -28,7 +28,7 @@ RUN <<EOF
     echo 'eval "$(pyenv virtualenv-init -)"' >> .zshrc 
     pyenv install 3.11.1
     pyenv global 3.11.1
-    pip install virtualenv pipenv pylance
+    pip install virtualenv pipenv
 EOF
 RUN <<EOF
     DIR="/home/gitpod/software"
