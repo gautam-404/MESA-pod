@@ -15,5 +15,6 @@
   
   With this, VScode should ssh you directly inside your folder.
 * Have fun with MESA!
-  - P.S. [PyMesaHandler](https://github.com/gautam-404/PyMesaHandler) is preinstalled for easy MESA access.
+  
+  P.S. [PyMesaHandler](https://github.com/gautam-404/PyMesaHandler) is preinstalled for easy MESA access.
     
