@@ -1,5 +1,4 @@
-# syntax=docker/dockerfile:labs
-FROM gitpod/workspace-base
+FROM gitpod/workspace-base:latest
 SHELL ["/usr/bin/zsh", "-c"]
 
 USER root
