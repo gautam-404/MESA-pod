@@ -11,7 +11,8 @@
 * Create a directory for your work. Or clone an existing repository.
 * Switch to your Folder within VScode. 
     - File -> Open -> *chose your folder in the prompt*
-    - Or simply press Ctrl+O / ⌘+O
+    - Or simply press Ctrl+O / ⌘+O to selecct your Folder
+  
   With this, VScode should ssh you directly inside your folder.
 * Have fun with MESA!
   - P.S. [PyMesaHandler](https://github.com/gautam-404/PyMesaHandler) is preinstalled for easy MESA access.
