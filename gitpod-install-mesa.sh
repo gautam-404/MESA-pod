@@ -1,7 +1,7 @@
 #! /bin/zsh
 
 ## Install MESA
-DIR="software"
+DIR="/home/gitpod/software"
 
 install_mesa()
 {
@@ -28,6 +28,7 @@ install_mesa()
     cd $DIR
     git clone --recurse-submodules https://github.com/gautam-404/PyMesaHandler.git
     cd PyMesaHandler
+    pip install -r requirements.txt
     pip install .
     
     echo "Done!"
@@ -35,12 +36,11 @@ install_mesa()
 
 set_env_var()
 {
-    echo "export MESASDK_ROOT=$DIR/mesasdk" >> ~/.zprofile
-    echo "source $DIR/mesasdk/bin/mesasdk_init.sh" >> ~/.zprofile
-    echo "export MESA_DIR=$DIR/mesa-r15140" >> ~/.zprofile
-    echo "export OMP_NUM_THREADS=2" >> ~/.zprofile
-    source ~/.zprofile
-}
+    echo "export MESASDK_ROOT=$DIR/mesasdk" >> ~/.zshrc
+    echo "source $DIR/mesasdk/bin/mesasdk_init.sh" >> ~/.zshrc
+    echo "export MESA_DIR=$DIR/mesa-r15140" >> ~/.zshrc
+    echo "export OMP_NUM_THREADS=2" >> ~/.zshrc
+    source ~/.zshrc
 
 if [ -d "$DIR/mesasdk" ] && [ -d "$DIR/mesa-r15140" ];
 then
@@ -51,7 +51,7 @@ then
     then
         set_env_var
         echo "Done!"
-        echo "Please run: source ~/.zprofile"
+        echo "Please run: source ~/.zshrc"
     else  
         echo "Remove and perform a clean re-install?"
         read response
