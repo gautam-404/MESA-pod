@@ -2,6 +2,8 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - before: yes | zsh setup.sh
+  - before: command -v zsh | sudo tee -a /etc/shells \
+            && sudo chsh -s $(which zsh) $USER \
+            && yes | zsh setup.sh
     init: yes n | zsh setup.sh
   
