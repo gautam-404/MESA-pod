@@ -1,5 +1,5 @@
 # MESA-pod
-## A ready to go [MESA](https://github.com/MESAHub/mesa) workspace on Gitpod! 
+## A ready to go [MESA](https://github.com/MESAHub/mesa) workspace on [Gitpod](https://gitpod.io/workspaces/)! 
 
 -> In the browser’s address bar, prefix the entire URL with gitpod.io/# and press Enter. Or click [here](https://gitpod.io/#https://github.com/gautam-404/MESA-pod).
 
