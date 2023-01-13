@@ -1,5 +1,4 @@
 FROM gitpod/workspace-base:latest
-SHELL ["/usr/bin/zsh", "-c"]
 
 USER root
 RUN <<EOF
@@ -35,5 +34,3 @@ RUN <<EOF
 EOF
     
 USER root
-# SHELL ["/bin/bash", "-c"]
-RUN sudo bash -lic 'true'
