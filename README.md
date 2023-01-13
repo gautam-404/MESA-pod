@@ -1,7 +1,7 @@
 # MESA-pod
 ## A ready to go [MESA](https://github.com/MESAHub/mesa) workspace on [Gitpod](https://gitpod.io/workspaces/)! 
 
-&rarr; In the browser’s address bar, prefix the entire URL with gitpod.io/# and press Enter. Or click [here](https://gitpod.io/#https://github.com/gautam-404/MESA-pod).
+&rarr; In your browser’s address bar, prefix this repository's URL with gitpod.io/# and press Enter. Or click [here](https://gitpod.io/#https://github.com/gautam-404/MESA-pod).
 
 &rarr; First Build might take some time, subsequent reboots are way quicker. 
 
