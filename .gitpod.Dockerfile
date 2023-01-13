@@ -35,3 +35,8 @@ RUN <<EOF
 EOF
     
 USER root
+RUN <<EOF
+    echo "source ~/.profile" >> ~/.bashrc
+    echo "[[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'" >> ~/.zshrc
+    bash -lic 'true'
+EOF
