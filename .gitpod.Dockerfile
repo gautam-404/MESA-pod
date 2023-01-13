@@ -1,21 +1,45 @@
 # syntax=docker/dockerfile:labs
-FROM gitpod/workspace-full
+FROM gitpod/workspace-base
 SHELL ["/usr/bin/zsh", "-c"]
 
 USER root
-ENV SHELL=/usr/bin/zsh
 RUN <<EOF
     apt-get update 
-    yes | apt-get install build-essential software-properties-common curl binutils make perl libx11-6 libx11-dev zlib1g zlib1g-dev tcsh procps 
-    pyenv install 3.11.1
-    pyenv global 3.11.1
+    yes | apt-get install build-essential software-properties-common curl \
+        binutils make perl libx11-6 libx11-dev zlib1g zlib1g-dev tcsh procps \
+        xorg openbox
+    apt-get clean
+    rm -rf /var/lib/apt/lists/* /tmp/*
 EOF
 
 USER gitpod
 ENV SHELL=/usr/bin/zsh
+### C/C++ ###
+RUN <<EOF
+    curl -fsSL https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - 
+    apt-add-repository -yu "deb http://apt.llvm.org/cosmic/ llvm-toolchain-cosmic-6.0 main" 
+    apt-get install -yq \
+        clang-format-6.0 \
+        clang-tools-6.0 \
+        cmake 
+    ln -s /usr/bin/clangd-6.0 /usr/bin/clangd 
+    apt-get clean 
+    rm -rf /var/lib/apt/lists/* /tmp/*
+EOF
+### Python ###
+ENV PATH=$HOME/.pyenv/bin:$HOME/.pyenv/shims:$PATH
+RUN <<EOF
+    curl -fsSL https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | zsh 
+    echo 'eval "$(pyenv init -)"' >> .zshrc 
+    echo 'eval "$(pyenv virtualenv-init -)"' >> .zshrc 
+    pyenv install 3.11.1
+    pyenv global 3.11.1
+    pip install virtualenv pipenv pylance
+    rm -rf /tmp/*
+EOF
 RUN <<EOF
     DIR="/home/gitpod/software"
-    mkdir ~/software \
+    mkdir ~/software 
     mkdir $DIR
     # sdk
     curl http://user.astro.wisc.edu/~townsend/resource/download/mesasdk/mesasdk-x86_64-linux-21.4.1.tar.gz --output $DIR/mesasdk-x86_64-linux-21.4.1.tar.gz
