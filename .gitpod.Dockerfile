@@ -11,7 +11,8 @@ EOF
 USER gitpod
 ENV SHELL=/usr/bin/zsh
 ### C/C++ ###
-RUN curl -fsSL https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add - 
+RUN <<EOF
+    curl -fsSL https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add - 
     sudo apt-add-repository -yu "deb http://apt.llvm.org/cosmic/ llvm-toolchain-cosmic-6.0 main" 
     sudo apt-get install -yq \
         clang-format-6.0 \
