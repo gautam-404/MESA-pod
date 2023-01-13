@@ -7,9 +7,6 @@ RUN <<EOF
     apt-get install -yq build-essential software-properties-common curl \
         binutils make perl libx11-6 libx11-dev zlib1g zlib1g-dev tcsh procps 
 EOF
-
-USER gitpod
-ENV SHELL=/usr/bin/zsh
 ### C/C++ ###
 RUN <<EOF
     curl -fsSL https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add - 
@@ -20,6 +17,9 @@ RUN <<EOF
         cmake 
     sudo ln -s /usr/bin/clangd-6.0 /usr/bin/clangd 
 EOF
+
+USER gitpod
+ENV SHELL=/usr/bin/zsh
 ### Python ###
 ENV PATH=$HOME/.pyenv/bin:$HOME/.pyenv/shims:$PATH
 RUN <<EOF
