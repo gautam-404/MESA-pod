@@ -1,3 +1,5 @@
 image:
   file: .gitpod.Dockerfile
-
+tasks:
+  - init: yes n | zsh gitpod-install-mesa.sh
+  
