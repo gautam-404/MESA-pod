@@ -35,4 +35,5 @@ RUN <<EOF
 EOF
     
 USER root
-SHELL ["/bin/bash", "-c"]
+# SHELL ["/bin/bash", "-c"]
+RUN sudo bash -lic 'true'
