@@ -6,8 +6,7 @@ USER root
 RUN <<EOF
     apt-get update 
     yes | apt-get install build-essential software-properties-common curl \
-        binutils make perl libx11-6 libx11-dev zlib1g zlib1g-dev tcsh procps \
-        xorg openbox
+        binutils make perl libx11-6 libx11-dev zlib1g zlib1g-dev tcsh procps 
 EOF
 
 USER gitpod
