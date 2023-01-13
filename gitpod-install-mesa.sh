@@ -1,7 +1,7 @@
-#! /bin/bash
+#! /bin/zsh
 
 ## Install MESA
-DIR="/workspace/software"
+DIR="software"
 
 install_mesa()
 {
@@ -35,11 +35,11 @@ install_mesa()
 
 set_env_var()
 {
-    echo "export MESASDK_ROOT=$DIR/mesasdk" >> ~/.zshrc
-    echo "source $DIR/mesasdk/bin/mesasdk_init.sh" >> ~/.zshrc
-    echo "export MESA_DIR=$DIR/mesa-r15140" >> ~/.zshrc
-    echo "export OMP_NUM_THREADS=2" >> ~/.zshrc
-    source ~/.zshrc
+    echo "export MESASDK_ROOT=$DIR/mesasdk" >> ~/.zprofile
+    echo "source $DIR/mesasdk/bin/mesasdk_init.sh" >> ~/.zprofile
+    echo "export MESA_DIR=$DIR/mesa-r15140" >> ~/.zprofile
+    echo "export OMP_NUM_THREADS=2" >> ~/.zprofile
+    source ~/.zprofile
 }
 
 if [ -d "$DIR/mesasdk" ] && [ -d "$DIR/mesa-r15140" ];
@@ -51,12 +51,13 @@ then
     then
         set_env_var
         echo "Done!"
-        echo "Please run: source ~/.zshrc"
+        echo "Please run: source ~/.zprofile"
     else  
         echo "Remove and perform a clean re-install?"
         read response
         if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
         then
+            rm -rf $DIR/mesasdk && rm -rf $DIR/mesa-r15140
             install_mesa
         else
             echo "Skipping!"
