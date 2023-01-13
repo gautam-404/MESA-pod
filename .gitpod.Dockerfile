@@ -9,13 +9,13 @@ RUN <<EOF
 EOF
 ### C/C++ ###
 RUN <<EOF
-    curl -fsSL https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add - 
-    sudo apt-add-repository -yu "deb http://apt.llvm.org/cosmic/ llvm-toolchain-cosmic-6.0 main" 
-    sudo apt-get install -yq \
+    curl -fsSL https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - 
+    apt-add-repository -yu "deb http://apt.llvm.org/cosmic/ llvm-toolchain-cosmic-6.0 main" 
+     apt-get install -yq \
         clang-format-6.0 \
         clang-tools-6.0 \
         cmake 
-    sudo ln -s /usr/bin/clangd-6.0 /usr/bin/clangd 
+    ln -s /usr/bin/clangd-6.0 /usr/bin/clangd 
 EOF
 
 USER gitpod
