@@ -35,4 +35,4 @@ RUN <<EOF
 EOF
     
 USER root
-ENV SHELL=/bin/bash
+SHELL ["/usr/bin/bash", "-c"]
